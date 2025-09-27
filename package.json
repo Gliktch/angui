@@ -1,0 +1,32 @@
+{
+  "name": "angui",
+  "version": "0.1.0",
+  "description": "AnGUI - Angband.live focused Chromium shell with customizable layout",
+  "author": "",
+  "license": "MIT",
+  "main": "dist/main/main.js",
+  "type": "commonjs",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc -p tsconfig.json",
+    "watch": "tsc -p tsconfig.json --watch",
+    "start:electron": "wait-on dist/main/main.js && electron .",
+    "dev": "concurrently \"npm:watch\" \"npm:start:electron\"",
+    "start": "npm run build && electron .",
+    "package": "npm run build && electron-builder",
+    "package:linux": "npm run build && electron-builder --linux AppImage",
+    "copy:static": "cpx \"src/renderer/**/*.{html,css}\" dist/renderer",
+    "postbuild": "npm run copy:static",
+    "package:all": "npm run build && electron-builder -m zip -w portable -l AppImage"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "20.12.7",
+    "concurrently": "8.2.2",
+    "electron": "31.4.0",
+    "electron-builder": "24.13.3",
+    "typescript": "5.4.5",
+    "wait-on": "7.0.1",
+    "cpx": "1.5.0"
+  }
+}

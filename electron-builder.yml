@@ -1,0 +1,22 @@
+appId: live.angband.angui
+productName: AnGUI
+asar: true
+directories:
+  output: release
+  buildResources: assets
+files:
+  - dist/**/*
+  - package.json
+  - node_modules/**/*
+linux:
+  target:
+    - deb
+  category: Game
+  maintainer: AnGUI Team
+  desktop:
+    Name: AnGUI
+    Comment: Play angband.live with a streamlined Chromium shell
+    Type: Application
+    Categories: Game;
+  artifactName: "${productName}-${version}-${os}-${arch}.${ext}"
+

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>AnGUI</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'; style-src 'self' 'unsafe-inline'; object-src 'none';" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app" data-zoom-root></div>
+    <div id="startup-overlay" aria-hidden="true">
+      <div class="overlay-content">
+        <p><strong>Ctrl+Shift+A</strong> — Settings</p>
+        <p><strong>Ctrl+Shift+Enter</strong> — Toggle Chat / Sidebar</p>
+        <p><strong>Ctrl+Shift+Scrollwheel</strong> — Resize Text</p>
+      </div>
+    </div>
+    <script src="./renderer.js"></script>
+  </body>
+</html>
