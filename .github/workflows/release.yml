@@ -38,13 +38,13 @@ jobs:
         run: |
           if [ "${{ matrix.os }}" = "ubuntu-latest" ]; then
             npm run build
-            npx electron-builder --linux AppImage
+            npx electron-builder --linux AppImage --publish=never
           elif [ "${{ matrix.os }}" = "windows-latest" ]; then
             npm run build
-            npx electron-builder --win portable
+            npx electron-builder --win portable --publish=never
           else
             npm run build
-            npx electron-builder --mac zip
+            npx electron-builder --mac zip --publish=never
           fi
 
       - name: Upload artifacts
