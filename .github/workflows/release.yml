@@ -38,7 +38,7 @@ jobs:
         run: |
           if [ "${{ matrix.os }}" = "ubuntu-latest" ]; then
             npm run build
-            npx electron-builder --linux AppImage --publish=never
+            npx electron-builder --linux AppImage deb tar.gz --publish=never
           elif [ "${{ matrix.os }}" = "windows-latest" ]; then
             npm run build
             npx electron-builder --win portable --publish=never
